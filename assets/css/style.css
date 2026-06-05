@@ -3,19 +3,19 @@
 /* --- DESIGN SYSTEM & TOKENS --- */
 :root {
   /* Colors */
-  --bg-main: #FFFFFF;
-  --bg-card: #0a0a0a;
-  --bg-card-hover: #171717;
-  --bg-nav: rgba(255, 255, 255, 0.98);
+  --bg-main: #F8FAFC;
+  --bg-card: #0F172A;
+  --bg-card-hover: #1E293B;
+  --bg-nav: rgba(248, 250, 252, 0.98);
   
-  --primary-gold: #000000;
-  --primary-gold-hover: #262626;
-  --primary-gold-dark: #000000;
-  --primary-gold-glow: rgba(0, 0, 0, 0.05);
+  --primary-gold: #2563EB;
+  --primary-gold-hover: #3B82F6;
+  --primary-gold-dark: #1D4ED8;
+  --primary-gold-glow: rgba(37, 99, 235, 0.15);
   
   --text-main: #FFFFFF;
-  --text-muted: #a3a3a3;
-  --text-dark: #000000;
+  --text-muted: #CBD5E1;
+  --text-dark: #0F172A;
   
   --border-color: transparent;
   --border-color-hover: transparent;
