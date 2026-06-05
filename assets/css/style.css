@@ -352,7 +352,7 @@ section {
   align-items: center;
   gap: 8px;
   list-style: none;
-  font-size: 0.85rem;
+  font-size: 0.75rem; /* Reduced font size */
   font-weight: 600;
 }
 
@@ -377,6 +377,22 @@ section {
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 1001;
+}
+
+/* --- GOOGLE TRANSLATE HACKS --- */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important; 
+}
+.skiptranslate {
+  display: none !important;
+}
+.lang-switcher a.active {
+  color: var(--text-dark);
+  opacity: 1;
+  background-color: var(--primary-gold-glow);
 }
 
 /* --- BUTTONS --- */

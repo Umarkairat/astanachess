@@ -189,60 +189,81 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-  // --- i18n LANGUAGE SWITCHER ---
+  // --- GOOGLE TRANSLATE INTEGRATION ---
   const langButtons = document.querySelectorAll('.lang-switcher a');
-  const elementsToTranslate = document.querySelectorAll('[data-i18n]');
+  
+  // Inject Google Translate script and element
+  window.googleTranslateElementInit = function() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'ru',
+      includedLanguages: 'ru,kk,en',
+      autoDisplay: false
+    }, 'google_translate_element');
+  };
 
-  const setLanguage = (lang) => {
-    // Save to local storage
-    localStorage.setItem('site_lang', lang);
+  const gtScript = document.createElement('script');
+  gtScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+  document.body.appendChild(gtScript);
 
-    // Update active class on buttons
-    langButtons.forEach(btn => {
-      if (btn.innerText.toLowerCase() === lang) {
-        btn.classList.add('active');
-        btn.setAttribute('aria-current', 'page');
-      } else {
-        btn.classList.remove('active');
-        btn.removeAttribute('aria-current');
+  const gtDiv = document.createElement('div');
+  gtDiv.id = 'google_translate_element';
+  gtDiv.style.display = 'none';
+  document.body.appendChild(gtDiv);
+
+  const setLanguage = (langText) => {
+    let langCode = 'ru';
+    if (langText === 'kz') langCode = 'kk';
+    if (langText === 'en') langCode = 'en';
+
+    // Save choice
+    localStorage.setItem('site_lang_gt', langCode);
+
+    if (langCode === 'ru') {
+      // Revert to original
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=' + window.location.hostname + '; path=/';
+      // Click original banner close button if it exists
+      const frame = document.querySelector('.goog-te-banner-frame');
+      if (frame) {
+          const innerDoc = frame.contentDocument || frame.contentWindow.document;
+          const closeBtn = innerDoc.getElementById('restore');
+          if (closeBtn) closeBtn.click();
       }
-    });
+      setTimeout(() => window.location.reload(), 100);
+      return;
+    }
 
-    // Translate elements if translations object is available
-    if (typeof translations !== 'undefined') {
-      elementsToTranslate.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[key] && translations[key][lang]) {
-          // If the element is an input, change the placeholder instead
-          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-             // For simplicity, assuming if it has text in dictionary, we change placeholder
-             // We can check if it has a placeholder attribute
-             if (el.hasAttribute('placeholder')) {
-                el.setAttribute('placeholder', translations[key][lang]);
-             } else {
-                el.value = translations[key][lang];
-             }
-          } else {
-            el.innerText = translations[key][lang];
-          }
-        }
-      });
+    const combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      combo.value = langCode;
+      combo.dispatchEvent(new Event('change'));
     }
   };
 
-  // Add click events to lang buttons
   if (langButtons.length > 0) {
     langButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const lang = btn.innerText.toLowerCase();
-        setLanguage(lang);
+        const langText = btn.innerText.toLowerCase().trim();
+        setLanguage(langText);
       });
     });
 
-    // Initialize on load
-    const savedLang = localStorage.getItem('site_lang') || 'ru';
-    setLanguage(savedLang);
+    // Initialize active class on load based on cookie
+    const gtCookie = document.cookie.split('; ').find(row => row.startsWith('googtrans='));
+    let activeLang = 'ru';
+    if (gtCookie) {
+      if (gtCookie.includes('/kk')) activeLang = 'kz';
+      if (gtCookie.includes('/en')) activeLang = 'en';
+    }
+    
+    langButtons.forEach(btn => {
+      if (btn.innerText.toLowerCase().trim() === activeLang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
   }
   
   // --- SCROLL REVEAL ANIMATIONS ---
