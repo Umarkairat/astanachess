@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Тренеры — Центральный Шахматный Клуб ASTANA</title>
+  <meta name="description" content="Познакомьтесь с сильнейшим тренерским составом в Астане: международные гроссмейстеры, мастера ФИДЕ и квалифицированные преподаватели шахмат.">
+  
+  <link rel="stylesheet" href="assets/css/style.css?v=1780599093590">
+</head>
+<body>
+
+  <!-- --- HEADER --- -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo" id="logo-link">
+        <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 22H5V20H19V22ZM17 19H7V17H17V19ZM16.5 8.5C16.5 10.5 13.5 11.5 13.5 13H15.5V15H8.5V13H10.5C10.5 11.5 7.5 10.5 7.5 8.5C7.5 6.5 10 7.5 10 5.5C10 5 9.5 4.5 9.5 4.5V3H11V1.5H13V3H14.5V4.5C14.5 4.5 14 5 14 5.5C14 7.5 16.5 6.5 16.5 8.5Z"/>
+        </svg>
+        <div>
+          <span>ASTANA</span>
+          <span class="logo-sub">Chess Club</span>
+        </div>
+      </a>
+      
+      <nav aria-label="Основное меню">
+        <ul class="nav-links">
+          <li><a href="index.html" data-i18n="nav_home">Главная</a></li>
+          <li><a href="o-klube.html" data-i18n="nav_about">О клубе</a></li>
+          <li><a href="obuchenie.html" data-i18n="nav_training">Обучение</a></li>
+          <li><a href="trenery.html" class="active" data-i18n="nav_coaches">Тренеры</a></li>
+          <li><a href="o-shaxmatax.html" data-i18n="nav_chess">Все о шахматах</a></li>
+          <li><a href="tournaments.html" data-i18n="nav_tournaments">Турниры</a></li>
+          <li><a href="astanaopen.html" data-i18n="nav_astanaopen">Astana Open</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <ul class="lang-switcher" aria-label="Переключатель языков">
+          <li><a href="#" class="active" aria-current="page">RU</a></li>
+          <li><a href="#">KZ</a></li>
+          <li><a href="#">EN</a></li>
+        </ul>
+        <button class="btn btn-primary open-modal" id="header-callback-btn" data-i18n="btn_callback">Обратный звонок</button>
+        <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">&#x2630;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- MAIN CONTENT --- -->
+  <main style="padding-top: var(--header-height);">
+    <!-- Breadcrumbs -->
+    <div style="background-color: #080809; border-bottom: 1px solid var(--border-color); padding: 15px 0;">
+      <div class="container" style="font-size: 0.85rem; color: var(--text-dark); opacity: 0.8;">
+        <a href="index.html" style="color: var(--primary-gold);" data-i18n="nav_home">Главная</a> &nbsp;&gt;&nbsp; <span>Тренерский состав</span>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <section id="coaches-intro">
+      <div class="container">
+        <h1 class="section-title center text-center text-gradient" style="display: block; width: fit-content; margin: 0 auto 1rem;">Наши тренеры</h1>
+        <p class="text-center subtitle">Занятия ведут заслуженные тренеры, международные гроссмейстеры и мастера, воспитавшие победителей мировых первенств.</p>
+
+        <!-- Filters Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all" id="filter-all-btn">Все</button>
+          <button class="filter-btn" data-filter="master" id="filter-master-btn">Гроссмейстеры и Мастера</button>
+          <button class="filter-btn" data-filter="coach" id="filter-coach-btn">Тренеры и КМС</button>
+          <button class="filter-btn" data-filter="management" id="filter-management-btn">Руководство</button>
+        </div>
+
+        <!-- Grid of Trainers -->
+        <div class="grid-3" id="trainers-grid">
+          
+          <!-- --- MANAGEMENT --- -->
+          <!-- Ablay Tastambekov -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Аблай Е. ТАСТАМБЕКОВ</h3>
+              <div class="trainer-title">Генеральный директор</div>
+              <p class="trainer-desc">Основатель ЦШК. Более 10 лет являлся вице-президентом Казахстанской федерации шахмат, возглавлял городскую федерацию шахмат.</p>
+            </div>
+          </div>
+
+          <!-- Gulnara Zhumagulova -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Гульнара С. ЖУМАГУЛОВА</h3>
+              <div class="trainer-title">Финансовый директор</div>
+              <p class="trainer-desc">Обеспечивает стратегическое и финансовое развитие сети клубов ЦШК «ASTANA», взаимодействие с партнерами.</p>
+            </div>
+          </div>
+
+          <!-- Nurlan Ibraev -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Нурлан Б. ИБРАЕВ</h3>
+              <div class="trainer-title">Международный гроссмейстер</div>
+              <p class="trainer-desc">Директор фонда «Каисса», государственный тренер Республики Казахстан по шахматам.</p>
+            </div>
+          </div>
+
+          <!-- Azamat Aubakirov -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Азамат Г. АУБАКИРОВ</h3>
+              <div class="trainer-title">Директор филиала / КМС</div>
+              <p class="trainer-desc">Международный арбитр ФИДЕ, лицензированный тренер ФИДЕ. Директор филиала на ул. Улпан, 2.</p>
+            </div>
+          </div>
+
+          <!-- Dias Isabaev -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Диас Т. ИСАБАЕВ</h3>
+              <div class="trainer-title">Директор филиала / Мастер ФИДЕ</div>
+              <p class="trainer-desc">Международный арбитр, действующий игрок. Директор филиала на ул. Жирентаева, 5.</p>
+            </div>
+          </div>
+
+
+          <!-- --- MASTERS & GMs --- -->
+          <!-- Yerzhan Shakenov -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Ержан Ж. ШАКЕНОВ</h3>
+              <div class="trainer-title">Главный тренер ЦШК</div>
+              <p class="trainer-desc">Заслуженный тренер РК, международный арбитр, мастер ФИДЕ, профессор, сеньор-тренер ФИДЕ (высшая тренерская категория).</p>
+            </div>
+          </div>
+
+          <!-- Kazybek Nogerbek -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Казыбек НОГЕРБЕК</h3>
+              <div class="trainer-title">Международный гроссмейстер</div>
+              <p class="trainer-desc">Чемпион мира до 20 лет (2026), чемпион мира по блицу среди юношей до 18 лет, член Национальной сборной Казахстана.</p>
+            </div>
+          </div>
+
+          <!-- Aldiyar Ansat -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Алдияр АНСАТ</h3>
+              <div class="trainer-title">Международный мастер</div>
+              <p class="trainer-desc">Чемпион Казахстана среди мужчин (2025), призер юношеских чемпионатов мира, чемпион Азии.</p>
+            </div>
+          </div>
+
+          <!-- Meruert Kamalidenova -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Меруерт КАМАЛИДЕНОВА</h3>
+              <div class="trainer-title">Женский гроссмейстер</div>
+              <p class="trainer-desc">Лидер женской сборной РК, серебряный призер Всемирной олимпиады в Будапеште, победительница чемпионата мира.</p>
+            </div>
+          </div>
+
+          <!-- Amina Kairbekova -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Амина КАИРБЕКОВА</h3>
+              <div class="trainer-title">Женский международный мастер</div>
+              <p class="trainer-desc">Серебряный призер чемпионата мира (2026), чемпионка мира среди школьниц до 17 лет.</p>
+            </div>
+          </div>
+
+          <!-- Erkin Kozganbay -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Еркін ҚОЗҒАНБАЙ</h3>
+              <div class="trainer-title">Мастер ФИДЕ</div>
+              <p class="trainer-desc">Стаж работы 10 лет. Воспитал призеров чемпионатов города, республики, Азии и мира.</p>
+            </div>
+          </div>
+
+
+          <!-- --- COACHES & CMS --- -->
+          <!-- Andrey Kvan -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Андрей В. КВАН</h3>
+              <div class="trainer-title">Директор филиала / КМС</div>
+              <p class="trainer-desc">Директор филиала на ул. Бокейхана, 25б. Ученики являются регулярными призерами городских кубков.</p>
+            </div>
+          </div>
+
+          <!-- Arnur Zhandildinov -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Арнұр ЖАНДІЛДИНОВ</h3>
+              <div class="trainer-title">Тренер / КМС</div>
+              <p class="trainer-desc">Специалист по работе с начинающими и младшими группами разрядников. Стаж более 7 лет.</p>
+            </div>
+          </div>
+
+          <!-- Vyugar Guseynov -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Вюгар М. ГУСЕЙНОВ</h3>
+              <div class="trainer-title">Судья / КМС</div>
+              <p class="trainer-desc">Лицензированный судья внутренних квалификационных соревнований ЦШК «ASTANA», преподаватель тактики.</p>
+            </div>
+          </div>
+
+          <!-- Akzhan Shopanov -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Акжан К. ШОПАНОВ</h3>
+              <div class="trainer-title">Тренер / КМС</div>
+              <p class="trainer-desc">Имеет колоссальный игровой опыт. Играл в молодежной сборной вместе с чемпионом мира Даниилом Дубовым.</p>
+            </div>
+          </div>
+
+          <!-- Murat Kashev -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Мурат К. КАШЕВ</h3>
+              <div class="trainer-title">Тренер / КМС</div>
+              <p class="trainer-desc">Выдающийся детский педагог. Подготовил чемпионов мира среди кадетов, чемпионов Азии и Республики Казахстан.</p>
+            </div>
+          </div>
+
+          <!-- Madiyar Zhusupbekov -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <svg style="width: 100%; height: 100%; fill: var(--primary-gold-dark); padding: 40px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Мадияр А. ЖУСУПБЕКОВ</h3>
+              <div class="trainer-title">Преподаватель / КМС</div>
+              <p class="trainer-desc">Специализируется на постановке прочных эндшпильных навыков и дебютных принципов у детей.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" id="footer-logo-link">
+            <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 22H5V20H19V22ZM17 19H7V17H17V19ZM16.5 8.5C16.5 10.5 13.5 11.5 13.5 13H15.5V15H8.5V13H10.5C10.5 11.5 7.5 10.5 7.5 8.5C7.5 6.5 10 7.5 10 5.5C10 5 9.5 4.5 9.5 4.5V3H11V1.5H13V3H14.5V4.5C14.5 4.5 14 5 14 5.5C14 7.5 16.5 6.5 16.5 8.5Z"/>
+            </svg>
+            <div>
+              <span>ASTANA</span>
+              <span class="logo-sub">Chess Club</span>
+            </div>
+          </a>
+          <p class="footer-desc" data-i18n="footer_desc">Обучение шахматам для детей и взрослых в Астане с использованием современных методик.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title" data-i18n="footer_sections">Разделы</h4>
+          <ul class="footer-links">
+            <li><a href="o-klube.html" data-i18n="nav_about">О клубе</a></li>
+            <li><a href="obuchenie.html" data-i18n="nav_training">Обучение</a></li>
+            <li><a href="trenery.html">Тренерский состав</a></li>
+            <li><a href="o-shaxmatax.html" data-i18n="nav_chess">Все о шахматах</a></li>
+            <li><a href="tournaments.html" data-i18n="nav_tournaments">Турниры</a></li>
+            <li><a href="astanaopen.html" data-i18n="nav_astanaopen">Astana Open</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4 class="footer-title" data-i18n="footer_contacts">Контакты</h4>
+          <p>
+            <svg style="width: 18px; height: 18px; fill: var(--primary-gold);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            +7 (771) 046 4777
+          </p>
+          <p>
+            <svg style="width: 18px; height: 18px; fill: var(--primary-gold);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            г. Астана, ул. Улпан, д. 2<br>
+            ул. Жирентаева, д. 5<br>
+            ул. Бокейхана, д. 25б
+          </p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2021-2026 CentralChessClub.kz. Все права защищены.</p>
+        <p><a href="#" id="privacy-link" data-i18n="footer_privacy">Политика конфиденциальности</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- FLOATING WHATSAPP BUTTON --- -->
+  <a href="https://wa.me/77710464777" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Связаться в WhatsApp" id="whatsapp-float-btn">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.335 4.963L2 22l5.21-1.366a9.94 9.94 0 0 0 4.8 1.22h.004c5.505 0 9.99-4.478 9.99-9.985C22.008 6.478 17.52 2 12.012 2zm6.07 14.155c-.246.696-1.445 1.282-2.006 1.356-.552.072-1.107.098-3.66-.9-3.26-1.277-5.352-4.577-5.516-4.793-.164-.217-1.32-1.758-1.32-3.352 0-1.595.836-2.38 1.13-2.705.297-.327.656-.408.87-.408.216 0 .43.002.617.011.196.01.46-.073.72.55.263.63.9 2.196.978 2.36.079.16.13.348.026.56-.104.21-.157.34-.315.524-.158.18-.33.402-.472.54-.158.156-.325.326-.14.646.185.32 1.22 2.01 2.624 3.267 1.81 1.62 3.327 2.122 3.796 2.338.47.216.742.18.1.02.164-.247 1.127-1.317 1.43-1.75.3-.43.6-.36.99-.217.39.143 2.47 1.163 2.89 1.373.42.21.7.315.803.493.106.18.106 1.04-.14 1.737z"/>
+    </svg>
+  </a>
+
+  <!-- --- CALLBACK MODAL --- -->
+  <div class="modal-overlay" id="callback-modal">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close" aria-label="Закрыть модальное окно">&times;</button>
+      <h3 class="modal-title text-gradient" data-i18n="modal_title">Заказать звонок</h3>
+      <p class="modal-desc" data-i18n="modal_desc">Оставьте свои контактные данные, и мы свяжемся с вами в течение 15 минут.</p>
+      <form action="#" id="modal-callback-form">
+        <div class="form-group">
+          <label class="form-label" for="modal-name" data-i18n="label_name">Ваше имя</label>
+          <input type="text" id="modal-name" class="form-input" placeholder="Имя" data-i18n="label_name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="modal-phone" data-i18n="label_phone">Телефон</label>
+          <input type="tel" id="modal-phone" class="form-input" placeholder="+7 (___) ___-____" data-i18n="label_phone" required>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit" id="modal-submit-btn" data-i18n="btn_submit">Отправить запрос</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
