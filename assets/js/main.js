@@ -32,6 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.innerHTML = '&#x2630;';
       });
     });
+    // Clone callback button into mobile menu
+    const headerCallbackBtn = document.getElementById('header-callback-btn');
+    if (headerCallbackBtn) {
+      const mobileBtn = headerCallbackBtn.cloneNode(true);
+      mobileBtn.id = 'mobile-callback-btn';
+      mobileBtn.style.display = 'block';
+      mobileBtn.style.width = '100%';
+      mobileBtn.style.textAlign = 'center';
+      
+      const li = document.createElement('li');
+      li.style.marginTop = '20px';
+      li.appendChild(mobileBtn);
+      navLinks.appendChild(li);
+    }
   }
 
   // --- CALLBACK MODAL ---
