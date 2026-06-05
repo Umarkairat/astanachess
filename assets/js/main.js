@@ -144,9 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- COACHES FILTER SYSTEM ---
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const trainerCards = document.querySelectorAll('.trainer-card');
+  const filterableItems = document.querySelectorAll('.trainer-card, .trainer-section-title');
 
-  if (filterButtons.length > 0 && trainerCards.length > 0) {
+  if (filterButtons.length > 0 && filterableItems.length > 0) {
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
         // Remove active state
@@ -155,17 +155,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const category = button.getAttribute('data-filter');
 
-        trainerCards.forEach(card => {
-          const cardCategory = card.getAttribute('data-category');
+        filterableItems.forEach(item => {
+          const itemCategory = item.getAttribute('data-category');
           
-          if (category === 'all' || cardCategory === category) {
-            card.style.display = 'flex';
+          if (category === 'all' || itemCategory === category) {
+            item.style.display = item.classList.contains('trainer-section-title') ? 'block' : 'flex';
             // Trigger animation
-            card.style.animation = 'none';
-            card.offsetHeight; // Force reflow
-            card.style.animation = 'fadeIn 0.4s ease-out forwards';
+            item.style.animation = 'none';
+            item.offsetHeight; // Force reflow
+            item.style.animation = 'fadeIn 0.4s ease-out forwards';
           } else {
-            card.style.display = 'none';
+            item.style.display = 'none';
           }
         });
       });

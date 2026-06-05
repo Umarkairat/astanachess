@@ -803,6 +803,71 @@ body {
   flex-direction: column;
 }
 
+/* --- Special Trainer Cards --- */
+.trainer-section-title {
+  grid-column: 1 / -1;
+  font-size: 2rem;
+  color: var(--primary-gold);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+
+.director-card {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.director-card .trainer-img-wrapper {
+  width: 40%;
+  aspect-ratio: auto;
+  height: 100%;
+  min-height: 400px;
+}
+
+.director-card .trainer-info {
+  width: 60%;
+  padding: 3rem;
+  justify-content: center;
+}
+
+.director-card .trainer-name {
+  font-size: 2.2rem;
+}
+
+.director-quote {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 2rem;
+  border-left: 4px solid var(--primary-gold);
+  padding-left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .director-card {
+    flex-direction: column;
+  }
+  .director-card .trainer-img-wrapper {
+    width: 100%;
+    min-height: 300px;
+  }
+  .director-card .trainer-info {
+    width: 100%;
+    padding: 2rem;
+  }
+  .trainer-section-title {
+    font-size: 1.5rem;
+  }
+}
+
+
 .trainer-name {
   font-size: 1.25rem;
   color: var(--text-main);
