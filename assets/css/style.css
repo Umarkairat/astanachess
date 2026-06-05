@@ -406,6 +406,23 @@ section {
   transform: translateY(-2px);
 }
 
+.btn-mega {
+  padding: 16px 36px !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: 0 10px 25px var(--primary-gold-glow);
+  animation: pulse-mega 2s infinite;
+}
+
+@keyframes pulse-mega {
+  0% { transform: scale(1); box-shadow: 0 10px 25px var(--primary-gold-glow); }
+  50% { transform: scale(1.05); box-shadow: 0 15px 35px var(--primary-gold-glow); }
+  100% { transform: scale(1); box-shadow: 0 10px 25px var(--primary-gold-glow); }
+}
+
 .btn-secondary {
   background-color: transparent;
   border-color: var(--primary-gold);
