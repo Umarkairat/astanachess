@@ -100,20 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
       modalForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const submitBtn = modalForm.querySelector('button[type="submit"]');
-        const nameInput = document.getElementById('modal-name');
-        const phoneInput = document.getElementById('modal-phone');
-        
-        const nameValue = nameInput ? nameInput.value.trim() : '';
-        const phoneValue = phoneInput ? phoneInput.value.trim() : '';
-        
-        // Form the WhatsApp message
-        const message = `Новая заявка: Центральный Шахматный Клуб!\nИмя: ${nameValue}\nТелефон: ${phoneValue}`;
-        const whatsappUrl = `https://api.whatsapp.com/send?phone=77785772516&text=${encodeURIComponent(message)}`;
-        
-        // Open WhatsApp in a new tab immediately (prevents popup blockers)
-        window.open(whatsappUrl, '_blank');
-
         const originalText = submitBtn.innerHTML;
+        
         submitBtn.innerHTML = 'Отправка...';
         submitBtn.disabled = true;
 
