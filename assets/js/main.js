@@ -244,6 +244,11 @@ document.addEventListener('DOMContentLoaded', () => {
     langButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
+        
+        // Update active class immediately on click
+        langButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
         const langText = btn.innerText.toLowerCase().trim();
         setLanguage(langText);
       });
