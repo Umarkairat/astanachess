@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Отправка через Green API
         try {
-          await fetch('https://7107.api.greenapi.com/waInstance7107644784/sendMessage/9d1735067fa743a3a923d8d955dddac72e1666d9b1e442f38e', {
+          await fetch('https://7107.api.greenapi.com/waInstance7107644784/sendMessage/9d1735867fa743a3a923d8d955dddae72e1666d9b1e442f38e', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
