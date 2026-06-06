@@ -4,18 +4,18 @@
 :root {
   /* Colors */
   --bg-main: #FFFFFF;
-  --bg-card: #064E3B;
-  --bg-card-hover: #065F46;
+  --bg-card: #0F172A; /* Deep Navy Blue */
+  --bg-card-hover: #1E293B;
   --bg-nav: rgba(255, 255, 255, 0.98);
   
-  --primary-gold: #10B981;
-  --primary-gold-hover: #34D399;
-  --primary-gold-dark: #059669;
-  --primary-gold-glow: rgba(16, 185, 129, 0.15);
+  --primary-gold: #FBBF24; /* Vibrant Yellow */
+  --primary-gold-hover: #F59E0B;
+  --primary-gold-dark: #D97706;
+  --primary-gold-glow: rgba(251, 191, 36, 0.15);
   
   --text-main: #FFFFFF;
-  --text-muted: #A7F3D0;
-  --text-dark: #064E3B;
+  --text-muted: #CBD5E1;
+  --text-dark: #0F172A;
   
   --border-color: transparent;
   --border-color-hover: transparent;
@@ -413,7 +413,8 @@ body {
 
 .btn-primary {
   background-color: var(--primary-gold);
-  color: #FFFFFF;
+  color: var(--text-dark);
+  font-weight: 700;
 }
 
 .btn-primary:hover {
