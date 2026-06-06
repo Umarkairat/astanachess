@@ -318,21 +318,21 @@ section {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--text-dark);
+  color: var(--primary-gold);
   opacity: 1;
 }
 
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: var(--primary-gold);
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform var(--transition-normal);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .nav-links a:hover::after,
@@ -487,7 +487,8 @@ body {
   overflow: hidden;
 }
 
-.card:hover {
+.card:hover,
+.card.reveal-up.active:hover {
   transform: translateY(-12px);
   border-color: var(--primary-gold);
   box-shadow: 0 15px 35px var(--primary-gold-glow);
