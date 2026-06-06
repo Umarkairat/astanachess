@@ -479,19 +479,23 @@ body {
 /* --- CARDS & PANELS --- */
 .card {
   background-color: var(--bg-card);
-  border: none;
+  border: 2px solid transparent;
   border-radius: var(--radius-lg);
   padding: 30px;
-  transition: var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border-color: var(--border-color-hover);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-12px);
+  border-color: var(--primary-gold);
+  box-shadow: 0 15px 35px var(--primary-gold-glow);
   background-color: var(--bg-card-hover);
+}
+
+.card:hover .card-icon {
+  transform: scale(1.15) rotate(8deg);
 }
 
 .card-title {
@@ -510,6 +514,7 @@ body {
   height: 40px;
   fill: var(--primary-gold);
   margin-bottom: 1.5rem;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* --- HERO SECTION --- */
@@ -1001,25 +1006,31 @@ body {
   right: 30px;
   width: 60px;
   height: 60px;
-  background-color: #25D366;
+  background-color: var(--bg-card);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   z-index: 999;
-  transition: var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 10px 25px var(--primary-gold-glow);
+  background-color: var(--primary-gold);
 }
 
 .whatsapp-icon {
   width: 32px;
   height: 32px;
-  fill: #FFFFFF;
+  fill: var(--primary-gold);
+  transition: fill 0.4s;
+}
+
+.whatsapp-float:hover .whatsapp-icon {
+  fill: var(--bg-card);
 }
 
 /* --- MODAL DIALOG --- */
