@@ -114,7 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Отправка через Green API
         try {
-          await fetch('https://7107.api.greenapi.com/waInstance7107644784/sendMessage/9d1735867fa743a3a923d8d955dddae72e1666d9b1e442f38e', {
+          console.log('Попытка отправки в Green API...');
+          console.log('Данные:', { chatId: '77785772516@c.us', message });
+          
+          const response = await fetch('https://7107.api.greenapi.com/waInstance7107644784/sendMessage/9d1735867fa743a3a923d8d955dddae72e1666d9b1e442f38e', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -124,8 +127,16 @@ document.addEventListener('DOMContentLoaded', () => {
               message: message
             })
           });
+          
+          const responseData = await response.json();
+          console.log('Ответ от Green API:', response.status, responseData);
+          
+          if (!response.ok) {
+            alert('Ошибка сервера WhatsApp: ' + JSON.stringify(responseData));
+          }
         } catch (error) {
-          console.error('Ошибка отправки в Green API:', error);
+          console.error('Сетевая ошибка отправки в Green API:', error);
+          alert('Сетевая ошибка при отправке (возможно блокирует браузер/AdBlock): ' + error.message);
         }
 
         // Replace modal content with success message
