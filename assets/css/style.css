@@ -946,6 +946,7 @@ body {
 
 .footer-brand .logo {
   margin-bottom: 1rem;
+  color: var(--text-main);
 }
 
 .footer-desc {
