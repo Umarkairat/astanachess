@@ -1008,31 +1008,31 @@ body {
   right: 30px;
   width: 60px;
   height: 60px;
-  background-color: var(--bg-card);
+  background-color: #25D366;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
   z-index: 999;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .whatsapp-float:hover {
   transform: scale(1.15) rotate(10deg);
-  box-shadow: 0 10px 25px var(--primary-gold-glow);
-  background-color: var(--primary-gold);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+  background-color: #128C7E;
 }
 
 .whatsapp-icon {
-  width: 32px;
-  height: 32px;
-  fill: var(--primary-gold);
+  width: 35px;
+  height: 35px;
+  fill: #FFFFFF;
   transition: fill 0.4s;
 }
 
 .whatsapp-float:hover .whatsapp-icon {
-  fill: var(--bg-card);
+  fill: #FFFFFF;
 }
 
 /* --- MODAL DIALOG --- */
