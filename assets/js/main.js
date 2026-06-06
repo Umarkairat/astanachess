@@ -97,17 +97,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (modalForm) {
-      modalForm.addEventListener('submit', (e) => {
+      modalForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const submitBtn = modalForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
+        const nameInput = document.getElementById('modal-name');
+        const phoneInput = document.getElementById('modal-phone');
         
+        const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = 'Отправка...';
         submitBtn.disabled = true;
 
-        setTimeout(() => {
-          // Replace modal content with success message
-          const originalContent = modalContainer.innerHTML;
+        const nameValue = nameInput ? nameInput.value.trim() : '';
+        const phoneValue = phoneInput ? phoneInput.value.trim() : '';
+        
+        const message = `*Новая заявка: Центральный Шахматный Клуб!*\nИмя: ${nameValue}\nТелефон: ${phoneValue}`;
+        
+        // Отправка через Green API
+        try {
+          await fetch('https://7107.api.greenapi.com/waInstance7107644784/sendMessage/9d1735067fa743a3a923d8d955dddac72e1666d9b1e442f38e', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              chatId: '77785772516@c.us',
+              message: message
+            })
+          });
+        } catch (error) {
+          console.error('Ошибка отправки в Green API:', error);
+        }
+
+        // Replace modal content with success message
+        const originalContent = modalContainer.innerHTML;
           modalContainer.innerHTML = `
             <button class="modal-close" id="modal-close-success" aria-label="Закрыть">&times;</button>
             <div style="text-align: center; padding: 30px 10px;">
@@ -137,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
           document.getElementById('modal-close-success').addEventListener('click', closeSuccess);
           document.getElementById('modal-ok-btn').addEventListener('click', closeSuccess);
 
-        }, 1200);
       });
     }
   }
