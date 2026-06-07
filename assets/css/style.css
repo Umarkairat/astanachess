@@ -1342,3 +1342,35 @@ body {
 .bento-item-large .bento-title {
   font-size: 2.5rem;
 }
+
+/* --- SPONSOR CARD CUSTOM STYLES --- */
+.sponsor-card {
+  max-width: 800px !important;
+  margin: 0 auto;
+}
+
+.sponsor-card .trainer-img-wrapper {
+  width: 45%;
+  aspect-ratio: auto !important;
+  height: 100%;
+}
+
+.sponsor-card .trainer-info {
+  width: 55%;
+  padding: 2.2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .sponsor-card .trainer-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1 !important;
+    height: auto;
+  }
+  .sponsor-card .trainer-info {
+    width: 100%;
+    padding: 2rem;
+  }
+}
