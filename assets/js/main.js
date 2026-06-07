@@ -233,26 +233,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-  // --- GOOGLE TRANSLATE INTEGRATION ---
+  // --- GOOGLE TRANSLATE INTEGRATION (LAZY LOADED) ---
   const langButtons = document.querySelectorAll('.lang-switcher a');
-  
-  // Inject Google Translate script and element
+  let gtLoaded = false;
+
   window.googleTranslateElementInit = function() {
     new google.translate.TranslateElement({
       pageLanguage: 'ru',
       includedLanguages: 'ru,kk,en',
       autoDisplay: false
     }, 'google_translate_element');
+    
+    // Apply pending language after widget initialization
+    const pendingLang = localStorage.getItem('site_lang_gt');
+    if (pendingLang && pendingLang !== 'ru') {
+      setTimeout(() => {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = pendingLang;
+          combo.dispatchEvent(new Event('change'));
+        }
+      }, 300);
+    }
   };
 
-  const gtScript = document.createElement('script');
-  gtScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-  document.body.appendChild(gtScript);
+  const loadGoogleTranslate = () => {
+    if (gtLoaded) return;
+    gtLoaded = true;
 
-  const gtDiv = document.createElement('div');
-  gtDiv.id = 'google_translate_element';
-  gtDiv.style.display = 'none';
-  document.body.appendChild(gtDiv);
+    const gtDiv = document.createElement('div');
+    gtDiv.id = 'google_translate_element';
+    gtDiv.style.display = 'none';
+    document.body.appendChild(gtDiv);
+
+    const gtScript = document.createElement('script');
+    gtScript.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    gtScript.async = true;
+    gtScript.defer = true;
+    document.body.appendChild(gtScript);
+  };
 
   const setLanguage = (langText) => {
     let langCode = 'ru';
@@ -261,13 +280,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Save choice
     localStorage.setItem('site_lang_gt', langCode);
-
-    // Try to update Google Translate combo box if it exists
-    const combo = document.querySelector('.goog-te-combo');
-    if (combo) {
-      combo.value = langCode;
-      combo.dispatchEvent(new Event('change'));
-    }
 
     if (langCode === 'ru') {
       // Revert to original by aggressively clearing the cookie across multiple domains
@@ -286,9 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       domains.forEach(domain => {
         const domainAttr = domain ? '; domain=' + domain : '';
-        // Set it to empty
         document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/' + domainAttr;
-        // Explicitly set it to original (Russian to Russian / auto to Russian)
         document.cookie = 'googtrans=/ru/ru; path=/' + domainAttr;
         document.cookie = 'googtrans=/auto/ru; path=/' + domainAttr;
       });
@@ -307,11 +317,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Reload to apply changes
       setTimeout(() => window.location.reload(), 150);
+      return;
+    }
+
+    // Load Translate if translating to a non-Russian language
+    loadGoogleTranslate();
+
+    // Try to update Google Translate combo box if it exists
+    const combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      combo.value = langCode;
+      combo.dispatchEvent(new Event('change'));
     }
   };
 
   if (langButtons.length > 0) {
+    // Check if we already have translation active from previous session
+    const gtCookie = document.cookie.split('; ').find(row => row.startsWith('googtrans='));
+    let activeLang = 'ru';
+    
+    if (gtCookie) {
+      if (gtCookie.includes('/kk')) activeLang = 'kz';
+      if (gtCookie.includes('/en')) activeLang = 'en';
+    }
+
+    // If saved language is not Russian, load Translate immediately
+    if (activeLang !== 'ru') {
+      loadGoogleTranslate();
+    }
+
     langButtons.forEach(btn => {
+      // Set initial active state
+      if (btn.innerText.toLowerCase().trim() === activeLang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         
@@ -322,22 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const langText = btn.innerText.toLowerCase().trim();
         setLanguage(langText);
       });
-    });
-
-    // Initialize active class on load based on cookie
-    const gtCookie = document.cookie.split('; ').find(row => row.startsWith('googtrans='));
-    let activeLang = 'ru';
-    if (gtCookie) {
-      if (gtCookie.includes('/kk')) activeLang = 'kz';
-      if (gtCookie.includes('/en')) activeLang = 'en';
-    }
-    
-    langButtons.forEach(btn => {
-      if (btn.innerText.toLowerCase().trim() === activeLang) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
     });
   }
   
