@@ -781,8 +781,8 @@ body {
 
 .trainer-card:hover {
   transform: translateY(-5px);
-  border-color: var(--border-color-hover);
-  box-shadow: var(--shadow-md);
+  border-color: var(--primary-gold);
+  box-shadow: 0 10px 30px var(--primary-gold-glow);
 }
 
 .trainer-img-wrapper {
@@ -826,21 +826,22 @@ body {
 .director-card {
   grid-column: 1 / -1;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   padding: 0;
   overflow: hidden;
 }
 
 .director-card .trainer-img-wrapper {
-  width: 40%;
-  aspect-ratio: auto;
+  width: 45%;
+  aspect-ratio: 1;
   height: 100%;
-  min-height: 400px;
 }
 
 .director-card .trainer-info {
-  width: 60%;
+  width: 55%;
   padding: 3rem;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -863,7 +864,9 @@ body {
   }
   .director-card .trainer-img-wrapper {
     width: 100%;
-    min-height: 300px;
+    aspect-ratio: 1;
+    min-height: auto;
+    height: auto;
   }
   .director-card .trainer-info {
     width: 100%;
