@@ -262,25 +262,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Save choice
     localStorage.setItem('site_lang_gt', langCode);
 
-    if (langCode === 'ru') {
-      // Revert to original
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=' + window.location.hostname + '; path=/';
-      // Click original banner close button if it exists
-      const frame = document.querySelector('.goog-te-banner-frame');
-      if (frame) {
-          const innerDoc = frame.contentDocument || frame.contentWindow.document;
-          const closeBtn = innerDoc.getElementById('restore');
-          if (closeBtn) closeBtn.click();
-      }
-      setTimeout(() => window.location.reload(), 100);
-      return;
-    }
-
+    // Try to update Google Translate combo box if it exists
     const combo = document.querySelector('.goog-te-combo');
     if (combo) {
       combo.value = langCode;
       combo.dispatchEvent(new Event('change'));
+    }
+
+    if (langCode === 'ru') {
+      // Revert to original by aggressively clearing the cookie across multiple domains
+      const domains = [
+        '',
+        window.location.hostname,
+        '.' + window.location.hostname
+      ];
+      
+      const hostParts = window.location.hostname.split('.');
+      if (hostParts.length > 2) {
+        const mainDomain = hostParts.slice(-2).join('.');
+        domains.push(mainDomain);
+        domains.push('.' + mainDomain);
+      }
+
+      domains.forEach(domain => {
+        const domainAttr = domain ? '; domain=' + domain : '';
+        // Set it to empty
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/' + domainAttr;
+        // Explicitly set it to original (Russian to Russian / auto to Russian)
+        document.cookie = 'googtrans=/ru/ru; path=/' + domainAttr;
+        document.cookie = 'googtrans=/auto/ru; path=/' + domainAttr;
+      });
+
+      // Try to click Google Translate restore button in the iframe if it exists
+      try {
+        const frame = document.querySelector('.goog-te-banner-frame');
+        if (frame) {
+          const innerDoc = frame.contentDocument || frame.contentWindow.document;
+          const closeBtn = innerDoc.getElementById('restore');
+          if (closeBtn) closeBtn.click();
+        }
+      } catch (e) {
+        console.error('Failed to click restore button:', e);
+      }
+
+      // Reload to apply changes
+      setTimeout(() => window.location.reload(), 150);
     }
   };
 
