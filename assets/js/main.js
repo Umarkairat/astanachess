@@ -48,6 +48,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // --- PHONE MASK HELPER ---
+  const applyPhoneMask = (inputEl) => {
+    if (!inputEl) return;
+    inputEl.addEventListener('input', function (e) {
+      let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+      if (!x[1]) { e.target.value = '+7'; return; }
+      if (x[1] !== '7' && x[1] !== '8') {
+        x[1] = '7';
+      }
+      e.target.value = !x[2] ? '+7' : '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+    });
+  };
+
   // --- CALLBACK MODAL ---
   const modalOverlay = document.getElementById('callback-modal');
   const modalClose = document.getElementById('modal-close');
@@ -79,99 +92,98 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Handle form submit (simulated success)
+    // Handle form submit (redirect to WhatsApp)
     const modalForm = modalOverlay.querySelector('form');
     const modalContainer = modalOverlay.querySelector('.modal-container');
     const modalPhone = document.getElementById('modal-phone');
 
-    // Simple phone mask
-    if (modalPhone) {
-      modalPhone.addEventListener('input', function (e) {
-        let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
-        if (!x[1]) { e.target.value = '+7'; return; }
-        if (x[1] !== '7' && x[1] !== '8') {
-          x[1] = '7';
-        }
-        e.target.value = !x[2] ? '+7' : '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
-      });
-    }
+    // Apply phone mask
+    applyPhoneMask(modalPhone);
 
     if (modalForm) {
-      modalForm.addEventListener('submit', async (e) => {
+      modalForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const submitBtn = modalForm.querySelector('button[type="submit"]');
         const nameInput = document.getElementById('modal-name');
         const phoneInput = document.getElementById('modal-phone');
-        
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = 'Отправка...';
-        submitBtn.disabled = true;
 
         const nameValue = nameInput ? nameInput.value.trim() : '';
         const phoneValue = phoneInput ? phoneInput.value.trim() : '';
-        
-        const message = `*Новая заявка: Центральный Шахматный Клуб!*\nИмя: ${nameValue}\nТелефон: ${phoneValue}`;
-        
-        // Отправка через Green API
-        try {
-          console.log('Попытка отправки в Green API...');
-          console.log('Данные:', { chatId: '77785772516@c.us', message });
-          
-          const response = await fetch('https://7107.api.greenapi.com/waInstance7107644784/sendMessage/9d1735867fa743a3a923d8d955dddae72e1666d9b1e442f38e', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              chatId: '77785772516@c.us',
-              message: message
-            })
-          });
-          
-          const responseData = await response.json();
-          console.log('Ответ от Green API:', response.status, responseData);
-          
-          if (!response.ok) {
-            alert('Ошибка сервера WhatsApp: ' + JSON.stringify(responseData));
-          }
-        } catch (error) {
-          console.error('Сетевая ошибка отправки в Green API:', error);
-          alert('Сетевая ошибка при отправке (возможно блокирует браузер/AdBlock): ' + error.message);
-        }
+
+        // Formulate WhatsApp message
+        const message = `Здравствуйте! Хочу заказать обратный звонок.\n\nИмя: ${nameValue}\nТелефон: ${phoneValue}`;
+        const waUrl = `https://wa.me/77710464777?text=${encodeURIComponent(message)}`;
+
+        // Open in new tab
+        window.open(waUrl, '_blank');
 
         // Replace modal content with success message
         const originalContent = modalContainer.innerHTML;
-          modalContainer.innerHTML = `
-            <button class="modal-close" id="modal-close-success" aria-label="Закрыть">&times;</button>
-            <div style="text-align: center; padding: 30px 10px;">
-              <svg style="width: 80px; height: 80px; fill: var(--success); margin-bottom: 20px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              <h3 class="modal-title" style="color: var(--primary-gold); margin-bottom: 10px;">Заявка принята!</h3>
-              <p style="color: var(--primary-gold); opacity: 0.9; font-size: 1.1rem; line-height: 1.5;">Спасибо, ваше обращение успешно отправлено.<br>Наш менеджер свяжется с вами в течение 15 минут.</p>
-              <button class="btn btn-primary" id="modal-ok-btn" style="margin-top: 30px; width: 100%;">Отлично</button>
-            </div>
-          `;
-          
-          const closeSuccess = () => {
-            closeModal();
-            setTimeout(() => {
-              modalContainer.innerHTML = originalContent; // Restore form for next time
-              // Re-attach close listener to the original close button
-              const newCloseBtn = document.getElementById('modal-close');
-              if (newCloseBtn) newCloseBtn.addEventListener('click', closeModal);
-              // Re-attach form listener (by reloading the page or we just let it be since it's a demo)
-              // Actually, better to just reload the page or let the user navigate. 
-              // Since it's just a UI demo, restoring HTML means we lose event listeners on the form.
-              window.location.reload(); 
-            }, 300);
-          };
+        modalContainer.innerHTML = `
+          <button class="modal-close" id="modal-close-success" aria-label="Закрыть">&times;</button>
+          <div style="text-align: center; padding: 30px 10px;">
+            <svg style="width: 80px; height: 80px; fill: var(--primary-gold); margin-bottom: 20px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <h3 class="modal-title" style="color: var(--primary-gold); margin-bottom: 10px;">Заявка отправлена!</h3>
+            <p style="color: var(--primary-gold); opacity: 0.9; font-size: 1.1rem; line-height: 1.5;">Вы были перенаправлены в WhatsApp для отправки сообщения.<br>Мы свяжемся с вами в ближайшее время!</p>
+            <button class="btn btn-primary" id="modal-ok-btn" style="margin-top: 30px; width: 100%;">Отлично</button>
+          </div>
+        `;
+        
+        const closeSuccess = () => {
+          closeModal();
+          setTimeout(() => {
+            modalContainer.innerHTML = originalContent; // Restore form
+            const newCloseBtn = document.getElementById('modal-close');
+            if (newCloseBtn) newCloseBtn.addEventListener('click', closeModal);
+            window.location.reload(); 
+          }, 300);
+        };
 
-          document.getElementById('modal-close-success').addEventListener('click', closeSuccess);
-          document.getElementById('modal-ok-btn').addEventListener('click', closeSuccess);
-
+        document.getElementById('modal-close-success').addEventListener('click', closeSuccess);
+        document.getElementById('modal-ok-btn').addEventListener('click', closeSuccess);
       });
     }
+  }
+
+  // --- CTA CALLBACK FORM ---
+  const ctaForm = document.getElementById('cta-callback-form');
+  const ctaPhone = document.getElementById('cta-phone');
+
+  // Apply phone mask to CTA phone input
+  applyPhoneMask(ctaPhone);
+
+  if (ctaForm) {
+    ctaForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nameInput = document.getElementById('cta-name');
+      const nameValue = nameInput ? nameInput.value.trim() : '';
+      const phoneValue = ctaPhone ? ctaPhone.value.trim() : '';
+
+      // Formulate WhatsApp message
+      const message = `Здравствуйте! Хочу записаться на бесплатное пробное тестирование.\n\nИмя: ${nameValue}\nТелефон: ${phoneValue}`;
+      const waUrl = `https://wa.me/77710464777?text=${encodeURIComponent(message)}`;
+
+      // Open in new tab
+      window.open(waUrl, '_blank');
+
+      // Replace CTA form with success state
+      const formCard = ctaForm.closest('.card');
+      if (formCard) {
+        formCard.innerHTML = `
+          <div style="text-align: center; padding: 20px 10px;">
+            <svg style="width: 70px; height: 70px; fill: var(--primary-gold); margin-bottom: 20px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <h3 style="color: #FFFFFF; font-size: 1.6rem; margin-bottom: 10px;">Заявка отправлена!</h3>
+            <p style="color: #FFFFFF; opacity: 0.8; font-size: 1.05rem; line-height: 1.5; margin-bottom: 20px;">
+              Вы были перенаправлены в WhatsApp.<br>Пожалуйста, отправьте сгенерированное сообщение в чате.
+            </p>
+            <button class="btn btn-secondary" onclick="window.location.reload();" style="width: 100%; border-radius: 30px;">Отправить еще раз</button>
+          </div>
+        `;
+      }
+    });
   }
 
   // --- COACHES FILTER SYSTEM ---
