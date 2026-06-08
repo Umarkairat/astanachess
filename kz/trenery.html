@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Жаттықтырушылар – Орталық шахмат клубы АСТАНА</title>
+  <meta name="description" content="Познакомьтесь с сильнейшим тренерским составом в Астане: международные гроссмейстеры, мастера ФИДЕ и квалифицированные преподаватели шахмат.">
+  
+  <link rel="stylesheet" href="../assets/css/style.css?v=1780670994742">
+</head>
+<body>
+
+  <!-- --- HEADER --- -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo" id="logo-link">
+        <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 22H5V20H19V22ZM17 19H7V17H17V19ZM16.5 8.5C16.5 10.5 13.5 11.5 13.5 13H15.5V15H8.5V13H10.5C10.5 11.5 7.5 10.5 7.5 8.5C7.5 6.5 10 7.5 10 5.5C10 5 9.5 4.5 9.5 4.5V3H11V1.5H13V3H14.5V4.5C14.5 4.5 14 5 14 5.5C14 7.5 16.5 6.5 16.5 8.5Z"/>
+        </svg>
+        <div>
+          <span>ASTANA</span>
+          <span class="logo-sub">Chess Club</span>
+        </div>
+      </a>
+      
+      <nav aria-label="Основное меню">
+        <ul class="nav-links">
+          <li><a href="index.html" data-i18n="nav_home">Үй</a></li>
+          <li><a href="o-klube.html" data-i18n="nav_about">Клуб туралы</a></li>
+          <li><a href="obuchenie.html" data-i18n="nav_training">Білім</a></li>
+          <li><a href="trenery.html" class="active" data-i18n="nav_coaches">Жаттықтырушылар</a></li>
+          <li><a href="o-shaxmatax.html" data-i18n="nav_chess">Барлығы шахмат туралы</a></li>
+          <li><a href="tournaments.html" data-i18n="nav_tournaments">Турнирлер</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <ul class="lang-switcher" aria-label="Language selector">
+          <li><a href="../trenery.html">RU</a></li>
+          <li><a href="#" class="active" aria-current="page">KZ</a></li>
+          <li><a href="../en/trenery.html" class="" >EN</a></li>
+        </ul>
+        <button class="btn btn-primary open-modal" id="header-callback-btn" data-i18n="btn_callback">Қайта қоңырау шалу</button>
+        <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">&#x2630;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- MAIN CONTENT --- -->
+  <main style="padding-top: var(--header-height);">
+    <!-- Breadcrumbs -->
+    <div style="background-color: #F8FAFC; border-bottom: 1px solid var(--border-color); padding: 15px 0;">
+      <div class="container" style="font-size: 0.85rem; color: var(--text-dark); opacity: 0.8;">
+        <a href="index.html" style="color: var(--primary-gold);" data-i18n="nav_home">Үй</a> &nbsp;&gt;&nbsp; <span>Жаттықтырушылар құрамы</span>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <section id="coaches-intro">
+      <div class="container">
+        <h1 class="section-title center text-center text-gradient" style="display: block; width: fit-content; margin: 0 auto 1rem;">Біздің жаттықтырушылар</h1>
+        <p class="text-center subtitle">Сабақтарды беделді жаттықтырушылар, халықаралық гроссмейстерлер және әлем чемпионаттарының жеңімпаздарын дайындаған шеберлер жүргізеді.</p>
+
+        <!-- Filters Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all" id="filter-all-btn">Барлығы</button>
+          <button class="filter-btn" data-filter="master" id="filter-master-btn">Гроссмейстерлер мен шеберлер</button>
+          <button class="filter-btn" data-filter="coach" id="filter-coach-btn">Жаттықтырушылар және CCM</button>
+          <button class="filter-btn" data-filter="management" id="filter-management-btn">Басқару</button>
+        </div>
+
+        <!-- Grid of Trainers -->
+        <div class="grid-3" id="trainers-grid">
+          
+          <!-- --- MANAGEMENT --- -->
+          <!-- Ablay Tastambekov -->
+          <div class="trainer-card director-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/аблай_есимгалиевич.jpg" alt="Абылай Е.ТАСТАМБЕКОВ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Абылай Е.ТАСТАМБЕКОВ</h3>
+              <div class="trainer-title">Бас директор</div>
+              <p class="trainer-desc">Орталық шок клубының негізін қалаушы. 10 жылдан астам Қазақстан шахмат федерациясының вице-президенті және қалалық шахмат федерациясын басқарды.</p>
+              <div class="director-quote" data-i18n="director_quote">«Шахмат – интеллектуалдық дамудың тиімді құралдарының бірі».<br>
+                <span style="font-size: 1rem; margin-top: 10px; display: block;">— Абылай Тастамбеков</span>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="trainer-section-title" data-category="management" data-i18n="heading_branch_directors">Филиал директорлары</h2>
+          <!-- Gulnara Zhumagulova -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/гульнара_сериковна_жумагулова.jpg" alt="Гүлнар С.ЖҰМАҒҰЛОВА" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Гүлнар С.ЖҰМАҒҰЛОВА</h3>
+              <div class="trainer-title">Қаржы директоры</div>
+              <p class="trainer-desc">«АСТАНА» Орталық спорт клубының клубтар желісінің стратегиялық және қаржылық дамуын, серіктестермен өзара әрекеттесуді қамтамасыз етеді.</p>
+            </div>
+          </div>
+
+          <!-- Nurlan Ibraev -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/нурлан_болатович_ибраев.jpg" alt="Нұрлан Б.ИБРАЕВ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Нұрлан Б.ИБРАЕВ</h3>
+              <div class="trainer-title">Халықаралық гроссмейстер</div>
+              <p class="trainer-desc">«Қайсса» қорының директоры, Қазақстан Республикасының шахматтан мемлекеттік жаттықтырушысы.</p>
+            </div>
+          </div>
+
+          <!-- Azamat Aubakirov -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/азамат_габитович_аубакиров.jpg" alt="Азамат Ғ.ӘУБӘКІРОВ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Азамат Ғ.ӘУБӘКІРОВ</h3>
+              <div class="trainer-title">Филиал директоры / KMS</div>
+              <p class="trainer-desc">Халықаралық FIDE төрешісі, лицензиясы бар FIDE жаттықтырушы. Көшедегі филиалдың директоры. Ұлпан, 2.</p>
+            </div>
+          </div>
+
+          <!-- Dias Isabaev -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/диас_токашевич_исабаев.jpg" alt="Диас Т. ИСАБАЕВ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Диас Т. ИСАБАЕВ</h3>
+              <div class="trainer-title">Филиал директоры / ФИДЕ шебері</div>
+              <p class="trainer-desc">Халықаралық төреші, белсенді ойыншы. Көшедегі филиалдың директоры. Жирентаева, 5.</p>
+            </div>
+          </div>
+
+
+          <!-- --- MASTERS & GMs --- -->
+          <h2 class="trainer-section-title" data-category="master" data-i18n="heading_head_coach">Бас бапкер</h2>
+          <!-- Yerzhan Shakenov -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/ержан_жаксылыкович_шакенов.jpg" alt="Ержан Ж. ШӘКЕНОВ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Ержан Ж. ШӘКЕНОВ</h3>
+              <div class="trainer-title">Орталық спорт клубының бас жаттықтырушысы</div>
+              <p class="trainer-desc">Қазақстан Республикасының еңбек сіңірген жаттықтырушысы, халықаралық арбитр, ФИДЕ шебері, профессор, ФИДЕ аға жаттықтырушы (жаттықтырушының жоғары санаты).</p>
+            </div>
+          </div>
+
+          <h2 class="trainer-section-title" data-category="master" data-i18n="heading_gms_masters">Гроссмейстерлер мен шеберлер</h2>
+          <!-- Kazybek Nogerbek -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/ногербек_казыбек.jpg" alt="Қазыбек НӨГЕРБЕК" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Қазыбек НӨГЕРБЕК</h3>
+              <div class="trainer-title">Халықаралық гроссмейстер</div>
+              <p class="trainer-desc">20 жасқа дейінгі әлем чемпионы (2026 ж.), 18 жасқа дейінгі ұлдар арасында блиц бойынша әлем чемпионы, Қазақстан ұлттық құрамасының мүшесі.</p>
+            </div>
+          </div>
+
+          <!-- Aldiyar Ansat -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/алдияр_ансат.jpg" alt="Алдияр АНСАТ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Алдияр АНСАТ</h3>
+              <div class="trainer-title">Халықаралық шебер</div>
+              <p class="trainer-desc">Ерлер арасындағы Қазақстан чемпионы (2025), жастар арасындағы әлем чемпионатының жүлдегері, Азия чемпионы.</p>
+            </div>
+          </div>
+
+          <!-- Meruert Kamalidenova -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/меруерт_камалиденова.jpg" alt="Меруерт КАМАЛИДЕНОВА" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Меруерт КАМАЛИДЕНОВА</h3>
+              <div class="trainer-title">Әйел гроссмейстер</div>
+              <p class="trainer-desc">Қазақстан Республикасы әйелдер құрамасының көшбасшысы, Будапештте өткен Әлемдік Олимпиаданың күміс жүлдегері, Әлем чемпионатының жеңімпазы.</p>
+            </div>
+          </div>
+
+          <!-- Amina Kairbekova -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/амина_каирбекова.jpg" alt="Әмина ҚАЙЫРБЕКОВА" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Әмина ҚАЙЫРБЕКОВА</h3>
+              <div class="trainer-title">Әйелдер арасындағы халықаралық шебер</div>
+              <p class="trainer-desc">Әлем чемпионатының күміс жүлдегері (2026), 17 жасқа дейінгі оқушы қыздар арасындағы әлем чемпионы.</p>
+            </div>
+          </div>
+
+          <!-- Erkin Kozganbay -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/ерк_н_аманба_лы_оз_анбай.jpg" alt="Еркін ҚОЗҒАНБАЙ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Еркін ҚОЗҒАНБАЙ</h3>
+              <div class="trainer-title">ФИДЕ шебері</div>
+              <p class="trainer-desc">Еңбек өтілі 10 жыл. Қалалық, республикалық, Азия және әлем чемпионаттарының жүлдегерлерін дайындады.</p>
+            </div>
+          </div>
+
+
+          <!-- --- COACHES & CMS --- -->
+          <h2 class="trainer-section-title" data-category="coach" data-i18n="heading_coaches_cms">Жаттықтырушылар және CCM</h2>
+          <!-- Andrey Kvan -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/андрей_висарионович_кван.jpg" alt="Андрей В. КВАН" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Андрей В. КВАН</h3>
+              <div class="trainer-title">Филиал директоры / KMS</div>
+              <p class="trainer-desc">Көшедегі филиалдың директоры. Бөкейхана, 25б. Студенттер қалалық кубоктардың тұрақты жеңімпаздары.</p>
+            </div>
+          </div>
+
+          <!-- Arnur Zhandildinov -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/арн_р_т_леубай_лы_жанд_лдинов.jpg" alt="Арнұр ЖАНДІЛДИНОВ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Арнұр ЖАНДІЛДИНОВ</h3>
+              <div class="trainer-title">Жаттықтырушы/CCM</div>
+              <p class="trainer-desc">Зарядтаушылардың бастауыш және кіші топтарымен жұмыс жөніндегі маман. 7 жылдан астам тәжірибе.</p>
+            </div>
+          </div>
+
+          <!-- Vyugar Guseynov -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/вюгар_муслимоглы_гусейнов.jpg" alt="ҒҰСЕЙІНОВ Вугар М" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">ҒҰСЕЙІНОВ Вугар М</h3>
+              <div class="trainer-title">Судья / магистрант</div>
+              <p class="trainer-desc">«АСТАНА» орталық спорт клубының ішкі іріктеу жарыстарының лицензияланған төрешісі, тактика пәнінің мұғалімі.</p>
+            </div>
+          </div>
+
+          <!-- Akzhan Shopanov -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/акжан_кенжетаевич_шопанов.jpg" alt="Ақжан Қ.ШОПАНОВ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Ақжан Қ.ШОПАНОВ</h3>
+              <div class="trainer-title">Жаттықтырушы/CCM</div>
+              <p class="trainer-desc">Үлкен ойын тәжірибесі бар. Жастар құрамасында әлем чемпионы Даниил Дубовпен бірге өнер көрсетті.</p>
+            </div>
+          </div>
+
+          <!-- Murat Kashev -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/мурат_кубайдоллинович_кашев.jpg" alt="Мұрат Қ.ҚАШЕВ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Мұрат Қ.ҚАШЕВ</h3>
+              <div class="trainer-title">Жаттықтырушы/CCM</div>
+              <p class="trainer-desc">Көрнекті балалар мұғалімі. Кадеттер арасында әлем чемпиондарын, Азия және Қазақстан Республикасының чемпиондарын дайындады.</p>
+            </div>
+          </div>
+
+          <!-- Madiyar Zhusupbekov -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/мадияр_амантаевич_жусупбеков.jpg" alt="Мадияр А.ЖҮСІПБЕКОВ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Мадияр А.ЖҮСІПБЕКОВ</h3>
+              <div class="trainer-title">Мұғалім/КМС</div>
+              <p class="trainer-desc">Балаларға ойын соңы дағдыларын және ашу принциптерін үйретуге маманданған.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" id="footer-logo-link">
+            <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 22H5V20H19V22ZM17 19H7V17H17V19ZM16.5 8.5C16.5 10.5 13.5 11.5 13.5 13H15.5V15H8.5V13H10.5C10.5 11.5 7.5 10.5 7.5 8.5C7.5 6.5 10 7.5 10 5.5C10 5 9.5 4.5 9.5 4.5V3H11V1.5H13V3H14.5V4.5C14.5 4.5 14 5 14 5.5C14 7.5 16.5 6.5 16.5 8.5Z"/>
+            </svg>
+            <div>
+              <span>ASTANA</span>
+              <span class="logo-sub">Chess Club</span>
+            </div>
+          </a>
+          <p class="footer-desc" data-i18n="footer_desc">Астанада балалар мен ересектерге арналған шахматты заманауи әдістемелермен оқыту.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title" data-i18n="footer_sections">Бөлімдер</h4>
+          <ul class="footer-links">
+            <li><a href="o-klube.html" data-i18n="nav_about">Клуб туралы</a></li>
+            <li><a href="obuchenie.html" data-i18n="nav_training">Білім</a></li>
+            <li><a href="trenery.html">Жаттықтырушылар құрамы</a></li>
+            <li><a href="o-shaxmatax.html" data-i18n="nav_chess">Барлығы шахмат туралы</a></li>
+            <li><a href="tournaments.html" data-i18n="nav_tournaments">Турнирлер</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4 class="footer-title" data-i18n="footer_contacts">Контактілер</h4>
+          <p>
+            <svg style="width: 18px; height: 18px; fill: var(--primary-gold);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            +7 (771) 046 4777
+          </p>
+          <p>
+            <svg style="width: 18px; height: 18px; fill: var(--primary-gold);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>Астана қ., көш. Ұлпан, 2<br>ст. Жирентаева, 5<br>ст. Бөкейхана, 25б</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2021-2026 CentralChessClub.kz. Барлық құқықтар қорғалған.</p>
+        <p><a href="#" id="privacy-link" data-i18n="footer_privacy">Құпиялылық саясаты</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- CALLBACK MODAL --- -->
+  <div class="modal-overlay" id="callback-modal">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close" aria-label="Закрыть модальное окно">&times;</button>
+      <h3 class="modal-title text-gradient" data-i18n="modal_title">Қоңырауды сұрау</h3>
+      <p class="modal-desc" data-i18n="modal_desc">Байланыс деректеріңізді қалдырыңыз, біз сізге 15 минут ішінде хабарласамыз.</p>
+      <form action="#" id="modal-callback-form">
+        <div class="form-group">
+          <label class="form-label" for="modal-name" data-i18n="label_name">сіздің атыңыз</label>
+          <input type="text" id="modal-name" class="form-input" placeholder="Аты" data-i18n="label_name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="modal-phone" data-i18n="label_phone">Телефон</label>
+          <input type="tel" id="modal-phone" class="form-input" placeholder="+7 (___) ___-____" data-i18n="label_phone" required>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit" id="modal-submit-btn" data-i18n="btn_submit">Сұраныс жіберу</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Coaches – Central Chess Club ASTANA</title>
+  <meta name="description" content="Познакомьтесь с сильнейшим тренерским составом в Астане: международные гроссмейстеры, мастера ФИДЕ и квалифицированные преподаватели шахмат.">
+  
+  <link rel="stylesheet" href="../assets/css/style.css?v=1780670994742">
+</head>
+<body>
+
+  <!-- --- HEADER --- -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo" id="logo-link">
+        <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 22H5V20H19V22ZM17 19H7V17H17V19ZM16.5 8.5C16.5 10.5 13.5 11.5 13.5 13H15.5V15H8.5V13H10.5C10.5 11.5 7.5 10.5 7.5 8.5C7.5 6.5 10 7.5 10 5.5C10 5 9.5 4.5 9.5 4.5V3H11V1.5H13V3H14.5V4.5C14.5 4.5 14 5 14 5.5C14 7.5 16.5 6.5 16.5 8.5Z"/>
+        </svg>
+        <div>
+          <span>ASTANA</span>
+          <span class="logo-sub">Chess Club</span>
+        </div>
+      </a>
+      
+      <nav aria-label="Основное меню">
+        <ul class="nav-links">
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="o-klube.html" data-i18n="nav_about">About the club</a></li>
+          <li><a href="obuchenie.html" data-i18n="nav_training">Education</a></li>
+          <li><a href="trenery.html" class="active" data-i18n="nav_coaches">Coaches</a></li>
+          <li><a href="o-shaxmatax.html" data-i18n="nav_chess">All about chess</a></li>
+          <li><a href="tournaments.html" data-i18n="nav_tournaments">Tournaments</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <ul class="lang-switcher" aria-label="Language selector">
+          <li><a href="../trenery.html">RU</a></li>
+          <li><a href="../kz/trenery.html" class="" >KZ</a></li>
+          <li><a href="#" class="active" aria-current="page">EN</a></li>
+        </ul>
+        <button class="btn btn-primary open-modal" id="header-callback-btn" data-i18n="btn_callback">Call back</button>
+        <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">&#x2630;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- MAIN CONTENT --- -->
+  <main style="padding-top: var(--header-height);">
+    <!-- Breadcrumbs -->
+    <div style="background-color: #F8FAFC; border-bottom: 1px solid var(--border-color); padding: 15px 0;">
+      <div class="container" style="font-size: 0.85rem; color: var(--text-dark); opacity: 0.8;">
+        <a href="index.html" style="color: var(--primary-gold);" data-i18n="nav_home">Home</a> &nbsp;&gt;&nbsp; <span>Coaching staff</span>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <section id="coaches-intro">
+      <div class="container">
+        <h1 class="section-title center text-center text-gradient" style="display: block; width: fit-content; margin: 0 auto 1rem;">Our trainers</h1>
+        <p class="text-center subtitle">Classes are taught by distinguished coaches, international grandmasters and masters who have trained winners of world championships.</p>
+
+        <!-- Filters Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all" id="filter-all-btn">All</button>
+          <button class="filter-btn" data-filter="master" id="filter-master-btn">Grandmasters and Masters</button>
+          <button class="filter-btn" data-filter="coach" id="filter-coach-btn">Coaches and CCM</button>
+          <button class="filter-btn" data-filter="management" id="filter-management-btn">Management</button>
+        </div>
+
+        <!-- Grid of Trainers -->
+        <div class="grid-3" id="trainers-grid">
+          
+          <!-- --- MANAGEMENT --- -->
+          <!-- Ablay Tastambekov -->
+          <div class="trainer-card director-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/аблай_есимгалиевич.jpg" alt="Ablay E. TASTAMBEKOV" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Ablay E. TASTAMBEKOV</h3>
+              <div class="trainer-title">General manager</div>
+              <p class="trainer-desc">Founder of the Central Shock Club. For more than 10 years he was vice-president of the Kazakhstan Chess Federation and headed the city chess federation.</p>
+              <div class="director-quote" data-i18n="director_quote">“Chess is one of the effective tools for intellectual development.”<br>
+                <span style="font-size: 1rem; margin-top: 10px; display: block;">— Ablai Tastambekov</span>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="trainer-section-title" data-category="management" data-i18n="heading_branch_directors">Branch directors</h2>
+          <!-- Gulnara Zhumagulova -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/гульнара_сериковна_жумагулова.jpg" alt="Gulnara S. ZHUMAGULOVA" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Gulnara S. ZHUMAGULOVA</h3>
+              <div class="trainer-title">Financial Director</div>
+              <p class="trainer-desc">Provides strategic and financial development of the network of clubs of the Central Sports Club “ASTANA”, interaction with partners.</p>
+            </div>
+          </div>
+
+          <!-- Nurlan Ibraev -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/нурлан_болатович_ибраев.jpg" alt="Nurlan B. IBRAEV" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Nurlan B. IBRAEV</h3>
+              <div class="trainer-title">International Grandmaster</div>
+              <p class="trainer-desc">Director of the Kaissa Foundation, state chess coach of the Republic of Kazakhstan.</p>
+            </div>
+          </div>
+
+          <!-- Azamat Aubakirov -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/азамат_габитович_аубакиров.jpg" alt="Azamat G. AUBAKIROV" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Azamat G. AUBAKIROV</h3>
+              <div class="trainer-title">Branch Director / KMS</div>
+              <p class="trainer-desc">International FIDE arbiter, licensed FIDE trainer. Director of the branch on the street. Ulpan, 2.</p>
+            </div>
+          </div>
+
+          <!-- Dias Isabaev -->
+          <div class="trainer-card" data-category="management">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/диас_токашевич_исабаев.jpg" alt="Diaz T. ISABAEV" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Diaz T. ISABAEV</h3>
+              <div class="trainer-title">Branch Director / FIDE Master</div>
+              <p class="trainer-desc">International referee, active player. Director of the branch on the street. Zhirentaeva, 5.</p>
+            </div>
+          </div>
+
+
+          <!-- --- MASTERS & GMs --- -->
+          <h2 class="trainer-section-title" data-category="master" data-i18n="heading_head_coach">Head coach</h2>
+          <!-- Yerzhan Shakenov -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/ержан_жаксылыкович_шакенов.jpg" alt="Erzhan Zh. SHAKENOV" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Erzhan Zh. SHAKENOV</h3>
+              <div class="trainer-title">Head coach of the Central Sports Club</div>
+              <p class="trainer-desc">Honored coach of the Republic of Kazakhstan, international arbiter, FIDE master, professor, FIDE senior coach (highest coaching category).</p>
+            </div>
+          </div>
+
+          <h2 class="trainer-section-title" data-category="master" data-i18n="heading_gms_masters">Grandmasters and Masters</h2>
+          <!-- Kazybek Nogerbek -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/ногербек_казыбек.jpg" alt="Kazybek NOGERBEK" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Kazybek NOGERBEK</h3>
+              <div class="trainer-title">International Grandmaster</div>
+              <p class="trainer-desc">World champion under 20 (2026), world blitz champion among boys under 18, member of the Kazakhstan National Team.</p>
+            </div>
+          </div>
+
+          <!-- Aldiyar Ansat -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/алдияр_ансат.jpg" alt="Aldiyar ANSAT" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Aldiyar ANSAT</h3>
+              <div class="trainer-title">International Master</div>
+              <p class="trainer-desc">Champion of Kazakhstan among men (2025), medalist of the youth world championships, champion of Asia.</p>
+            </div>
+          </div>
+
+          <!-- Meruert Kamalidenova -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/меруерт_камалиденова.jpg" alt="Meruert KAMALIDENOVA" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Meruert KAMALIDENOVA</h3>
+              <div class="trainer-title">Female Grandmaster</div>
+              <p class="trainer-desc">Leader of the women's team of the Republic of Kazakhstan, silver medalist of the World Olympics in Budapest, winner of the World Championship.</p>
+            </div>
+          </div>
+
+          <!-- Amina Kairbekova -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/амина_каирбекова.jpg" alt="Amina KAIRBEKOVA" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Amina KAIRBEKOVA</h3>
+              <div class="trainer-title">Women's International Master</div>
+              <p class="trainer-desc">Silver medalist of the World Championship (2026), world champion among schoolgirls under 17 years old.</p>
+            </div>
+          </div>
+
+          <!-- Erkin Kozganbay -->
+          <div class="trainer-card" data-category="master">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/ерк_н_аманба_лы_оз_анбай.jpg" alt="Erkin KOZGANBAY" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Erkin KOZGANBAY</h3>
+              <div class="trainer-title">FIDE Master</div>
+              <p class="trainer-desc">Work experience 10 years. He trained prize-winners of city, national, Asian and world championships.</p>
+            </div>
+          </div>
+
+
+          <!-- --- COACHES & CMS --- -->
+          <h2 class="trainer-section-title" data-category="coach" data-i18n="heading_coaches_cms">Coaches and CCM</h2>
+          <!-- Andrey Kvan -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/андрей_висарионович_кван.jpg" alt="Andrey V. KVAN" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Andrey V. KVAN</h3>
+              <div class="trainer-title">Branch Director / KMS</div>
+              <p class="trainer-desc">Director of the branch on the street. Bokeikhana, 25b. Students are regular winners of city cups.</p>
+            </div>
+          </div>
+
+          <!-- Arnur Zhandildinov -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/арн_р_т_леубай_лы_жанд_лдинов.jpg" alt="Arnur ZHANDILDINOV" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Arnur ZHANDILDINOV</h3>
+              <div class="trainer-title">Trainer/CCM</div>
+              <p class="trainer-desc">Specialist in working with beginners and junior groups of dischargers. More than 7 years of experience.</p>
+            </div>
+          </div>
+
+          <!-- Vyugar Guseynov -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/вюгар_муслимоглы_гусейнов.jpg" alt="Vugar M. GUSEINOV" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Vugar M. GUSEINOV</h3>
+              <div class="trainer-title">Judge / Candidate of Masters</div>
+              <p class="trainer-desc">Licensed judge of internal qualifying competitions of the Central Sports Club "ASTANA", teacher of tactics.</p>
+            </div>
+          </div>
+
+          <!-- Akzhan Shopanov -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/акжан_кенжетаевич_шопанов.jpg" alt="Akzhan K. SHOPANOV" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Akzhan K. SHOPANOV</h3>
+              <div class="trainer-title">Trainer/CCM</div>
+              <p class="trainer-desc">Has enormous gaming experience. He played in the youth team together with world champion Daniil Dubov.</p>
+            </div>
+          </div>
+
+          <!-- Murat Kashev -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/мурат_кубайдоллинович_кашев.jpg" alt="Murat K. KASHEV" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Murat K. KASHEV</h3>
+              <div class="trainer-title">Trainer/CCM</div>
+              <p class="trainer-desc">Outstanding children's teacher. Prepared world champions among cadets, champions of Asia and the Republic of Kazakhstan.</p>
+            </div>
+          </div>
+
+          <!-- Madiyar Zhusupbekov -->
+          <div class="trainer-card" data-category="coach">
+            <div class="trainer-img-wrapper">
+              <img src="../assets/img/trainers/мадияр_амантаевич_жусупбеков.jpg" alt="Madiyar A. ZHUSUPBEKOV" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name text-gradient">Madiyar A. ZHUSUPBEKOV</h3>
+              <div class="trainer-title">Teacher/KMS</div>
+              <p class="trainer-desc">Specializes in teaching strong endgame skills and opening principles to children.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" id="footer-logo-link">
+            <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 22H5V20H19V22ZM17 19H7V17H17V19ZM16.5 8.5C16.5 10.5 13.5 11.5 13.5 13H15.5V15H8.5V13H10.5C10.5 11.5 7.5 10.5 7.5 8.5C7.5 6.5 10 7.5 10 5.5C10 5 9.5 4.5 9.5 4.5V3H11V1.5H13V3H14.5V4.5C14.5 4.5 14 5 14 5.5C14 7.5 16.5 6.5 16.5 8.5Z"/>
+            </svg>
+            <div>
+              <span>ASTANA</span>
+              <span class="logo-sub">Chess Club</span>
+            </div>
+          </a>
+          <p class="footer-desc" data-i18n="footer_desc">Chess training for children and adults in Astana using modern techniques.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title" data-i18n="footer_sections">Sections</h4>
+          <ul class="footer-links">
+            <li><a href="o-klube.html" data-i18n="nav_about">About the club</a></li>
+            <li><a href="obuchenie.html" data-i18n="nav_training">Education</a></li>
+            <li><a href="trenery.html">Coaching staff</a></li>
+            <li><a href="o-shaxmatax.html" data-i18n="nav_chess">All about chess</a></li>
+            <li><a href="tournaments.html" data-i18n="nav_tournaments">Tournaments</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4 class="footer-title" data-i18n="footer_contacts">Contacts</h4>
+          <p>
+            <svg style="width: 18px; height: 18px; fill: var(--primary-gold);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            +7 (771) 046 4777
+          </p>
+          <p>
+            <svg style="width: 18px; height: 18px; fill: var(--primary-gold);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>Astana, st. Ulpan, 2<br>st. Zhirentaeva, 5<br>st. Bokeikhana, 25b</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2021-2026 CentralChessClub.kz. All rights reserved.</p>
+        <p><a href="#" id="privacy-link" data-i18n="footer_privacy">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- CALLBACK MODAL --- -->
+  <div class="modal-overlay" id="callback-modal">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close" aria-label="Закрыть модальное окно">&times;</button>
+      <h3 class="modal-title text-gradient" data-i18n="modal_title">Request a call</h3>
+      <p class="modal-desc" data-i18n="modal_desc">Leave your contact details and we will contact you within 15 minutes.</p>
+      <form action="#" id="modal-callback-form">
+        <div class="form-group">
+          <label class="form-label" for="modal-name" data-i18n="label_name">your name</label>
+          <input type="text" id="modal-name" class="form-input" placeholder="Name" data-i18n="label_name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="modal-phone" data-i18n="label_phone">Telephone</label>
+          <input type="tel" id="modal-phone" class="form-input" placeholder="+7 (___) ___-____" data-i18n="label_phone" required>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit" id="modal-submit-btn" data-i18n="btn_submit">Send request</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
