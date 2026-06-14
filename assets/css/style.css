@@ -287,8 +287,8 @@ section {
 }
 
 .logo-img {
-  width: 44px !important;
-  height: 38px !important;
+  width: auto !important;
+  height: 42px !important;
   flex-shrink: 0 !important;
   object-fit: contain !important;
 }
