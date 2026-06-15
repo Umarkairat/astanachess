@@ -1,15 +1,29 @@
 const fs = require('fs');
 const path = require('path');
 
-const dir = 'c:/projects/astanachess/';
-const files = fs.readdirSync(dir).filter(f => f.endsWith('.html'));
+const baseDir = 'c:/projects/astanachess';
+const subDirs = ['', 'kz', 'en'];
+const version = Date.now();
 
-files.forEach(file => {
-    let content = fs.readFileSync(path.join(dir, file), 'utf8');
+subDirs.forEach(sub => {
+    const dirPath = path.join(baseDir, sub);
+    if (!fs.existsSync(dirPath)) return;
     
-    // Add a cache-buster query parameter to force the browser to load the new CSS
-    content = content.replace(/href="assets\/css\/style\.css(\?v=\d+)?"/g, 'href="assets/css/style.css?v=' + Date.now() + '"');
+    const files = fs.readdirSync(dirPath).filter(f => f.endsWith('.html'));
     
-    fs.writeFileSync(path.join(dir, file), content, 'utf8');
-    console.log(`Updated ${file}`);
+    files.forEach(file => {
+        const filePath = path.join(dirPath, file);
+        let content = fs.readFileSync(filePath, 'utf8');
+        
+        // Update CSS cache buster
+        content = content.replace(/href="(\.\.\/)?assets\/css\/style\.css(\?v=\d+)?"/g, `href="$1assets/css/style.css?v=${version}"`);
+        
+        // Update JS cache buster
+        content = content.replace(/src="(\.\.\/)?assets\/js\/main\.js(\?v=\d+)?"/g, `src="$1assets/js/main.js?v=${version}"`);
+        
+        fs.writeFileSync(filePath, content, 'utf8');
+        console.log(`Updated cache busters in ${path.join(sub, file)}`);
+    });
 });
+
+console.log(`Successfully updated all HTML files to version query parameter: ?v=${version}`);
